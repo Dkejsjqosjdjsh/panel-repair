@@ -11,7 +11,7 @@
     "features": [
         "steam_disk_space"
     ],
-    "images": [
+    "docker_images": [
         "registry.cn-shanghai.aliyuncs.com\/pterodactyl-china\/games:source"
     ],
     "file_denylist": [],
@@ -132,7 +132,7 @@
         },
         {
             "name": "Mods",
-            "description": "Specifies the order and which mods are loaded. ModIDs need to be comma-separated such as: ModID1,ModID2",
+            "description": "指定加载顺序和模组。ModID 需要用逗号分隔，例如：ModID1,ModID2",
             "env_variable": "MOD_ID",
             "default_value": "",
             "user_viewable": true,
@@ -141,8 +141,8 @@
             "field_type": "text"
         },
         {
-            "name": "Max Players",
-            "description": "Specifies the maximum amount of players able to join the server.",
+            "name": "最大玩家数",
+            "description": "指定能够加入服务器的玩家的最大数量。",
             "env_variable": "MAX_PLAYERS",
             "default_value": "12",
             "user_viewable": true,
