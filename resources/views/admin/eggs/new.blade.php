@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-预设配置
+    预设配置
 @endsection
 
 @section('content-header')
-<h1>新预设<small>为服务器创建新预设.</small></h1>
-<ol class="breadcrumb">
-    <li><a href="{{ route('admin.index') }}">管理</a></li>
-    <li><a href="{{ route('admin.nests') }}">预设组</a></li>
-    <li class="active">新预设</li>
-</ol>
+    <h1>新预设<small>为服务器创建新预设.</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ route('admin.index') }}">管理</a></li>
+        <li><a href="{{ route('admin.nests') }}">预设组</a></li>
+        <li class="active">新预设</li>
+    </ol>
 @endsection
 
 @section('content')
@@ -140,16 +140,16 @@
 @endsection
 
 @section('footer-scripts')
-@parent
-{!! Theme::js('vendor/lodash/lodash.js') !!}
-<script>
+    @parent
+    {!! Theme::js('vendor/lodash/lodash.js') !!}
+    <script>
     $(document).ready(function() {
         $('#pNestId').select2().change();
         $('#pConfigFrom').select2();
     });
-    $('#pNestId').on('change', function(event) {
+    $('#pNestId').on('change', function (event) {
         $('#pConfigFrom').html('<option value="">None</option>').select2({
-            data: $.map(_.get(Pterodactyl.nests, $(this).val() + '.eggs', []), function(item) {
+            data: $.map(_.get(Pterodactyl.nests, $(this).val() + '.eggs', []), function (item) {
                 return {
                     id: item.id,
                     text: item.name + ' <' + item.author + '>',
@@ -173,5 +173,5 @@
         selectOnClose: false,
         tokenSeparators: [',', ' '],
     });
-    </script>
+</script>
 @endsection
